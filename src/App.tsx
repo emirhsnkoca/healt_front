@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Heart, Github, Twitter, Linkedin, Sun, Moon } from 'lucide-react';
+import { Heart, Sun, Moon } from 'lucide-react';
 import HealthForm from './components/HealthForm';
 import ResultCard from './components/ResultCard';
 import FloatingElements from './components/FloatingElements';
@@ -276,61 +276,6 @@ function App() {
             </div>
           </div>
         </section>
-
-        {/* Footer */}
-        <footer className="bg-gray-800 dark:bg-gray-900 text-white py-12">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center justify-between">
-              <div className="flex items-center space-x-2 mb-4 md:mb-0">
-                <Heart className="w-6 h-6 text-red-400" />
-                <span className="text-lg font-semibold">Kalp Sağlığı Kontrolü</span>
-              </div>
-              
-              <div className="flex items-center space-x-6 mb-4 md:mb-0">
-                <button className="p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                  <Github className="w-5 h-5" />
-                </button>
-                <button className="p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                  <Twitter className="w-5 h-5" />
-                </button>
-                <button className="p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                  <Linkedin className="w-5 h-5" />
-                </button>
-              </div>
-              
-              <div className="flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 rounded-lg">
-                <Heart className="w-4 h-4" />
-                <span className="text-sm font-medium">Yapay Zeka Destekli</span>
-              </div>
-            </div>
-            
-            {/* API Information */}
-            <div className="mt-8 pt-8 border-t border-gray-700">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-lg font-semibold mb-3">Bu Araç Hakkında</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    Bu kalp sağlığı değerlendirmesi, UCI Kalp Hastalığı Veri Seti üzerinde eğitilmiş bir makine öğrenimi modeli kullanır. 
-                    Model, kalp hastalığı riskinizi tahmin etmek için 13 farklı sağlık parametresini analiz eder.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-3">Nasıl Çalışır</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    Yapay zeka modelimiz, sağlık verilerinizi işler ve klinik verilerden öğrenilen kalıplara dayanarak bir risk değerlendirmesi sunar. 
-                    Tahmin, birden fazla faktörü aynı anda analiz eden özel bir RandomForest algoritması kullanılarak yapılır.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-              <p className="text-gray-400 text-sm">
-                © 2025 Kalp Sağlığı Kontrolü. Bu araç yalnızca eğitim amaçlıdır ve profesyonel tıbbi tavsiyenin yerini tutmaz.
-              </p>
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
   );
