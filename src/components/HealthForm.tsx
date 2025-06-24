@@ -73,40 +73,40 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
   };
 
   return (
-    <div className="glass rounded-3xl p-8 shadow-2xl">
-      <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-400/20 rounded-full mb-4">
-          <Stethoscope className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+    <div className="glass rounded-2xl p-5 shadow-2xl">
+      <div className="text-center mb-4">
+        <div className="inline-flex items-center justify-center w-10 h-10 bg-blue-100 dark:bg-blue-400/20 rounded-full mb-2">
+          <Stethoscope className="w-5 h-5 text-blue-600 dark:text-blue-400" />
         </div>
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+        <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
           Sağlık Değerlendirme Formu
         </h2>
-        <p className="text-gray-600 dark:text-gray-300">
+        <p className="text-sm text-gray-600 dark:text-gray-300">
           Doğru risk değerlendirmesi için lütfen sağlık bilgilerinizi doldurun
         </p>
       </div>
 
       {/* Error Display */}
       {error && (
-        <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl">
+        <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl">
           <div className="flex items-center space-x-2">
-            <AlertTriangle className="w-5 h-5 text-red-600 dark:text-red-400" />
-            <p className="text-red-700 dark:text-red-300 text-sm font-medium">
+            <AlertTriangle className="w-4 h-4 text-red-600 dark:text-red-400" />
+            <p className="text-red-700 dark:text-red-300 text-xs font-medium">
               {error}
             </p>
           </div>
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Age */}
           <FormField label="Yaş" icon={User} tooltip="Yaşınız (yıl olarak)">
             <input
               type="number"
               value={formData.age || ''}
               onChange={(e) => handleInputChange('age', parseInt(e.target.value) || 0)}
-              className={`w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
+              className={`w-full px-3 py-2 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
                 errors.age ? 'border-red-300' : 'border-gray-200 dark:border-gray-600'
               } focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200`}
               placeholder="Yaşınızı girin"
@@ -120,7 +120,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
             <select
               value={formData.sex}
               onChange={(e) => handleInputChange('sex', e.target.value)}
-              className={`w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
+              className={`w-full px-3 py-2 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
                 errors.sex ? 'border-red-300' : 'border-gray-200 dark:border-gray-600'
               } focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200`}
             >
@@ -139,7 +139,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
             <select
               value={formData.chestPainType}
               onChange={(e) => handleInputChange('chestPainType', e.target.value)}
-              className={`w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
+              className={`w-full px-3 py-2 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
                 errors.chestPainType ? 'border-red-300' : 'border-gray-200 dark:border-gray-600'
               } focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200`}
             >
@@ -161,7 +161,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
               type="number"
               value={formData.restingBP || ''}
               onChange={(e) => handleInputChange('restingBP', parseInt(e.target.value) || 0)}
-              className={`w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
+              className={`w-full px-3 py-2 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
                 errors.restingBP ? 'border-red-300' : 'border-gray-200 dark:border-gray-600'
               } focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200`}
               placeholder="örn. 120"
@@ -180,7 +180,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
               type="number"
               value={formData.cholesterol || ''}
               onChange={(e) => handleInputChange('cholesterol', parseInt(e.target.value) || 0)}
-              className={`w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
+              className={`w-full px-3 py-2 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
                 errors.cholesterol ? 'border-red-300' : 'border-gray-200 dark:border-gray-600'
               } focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200`}
               placeholder="örn. 200"
@@ -204,7 +204,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
                   onChange={() => handleInputChange('fastingBS', true)}
                   className="w-4 h-4 text-blue-600"
                 />
-                <span className="text-sm text-gray-700 dark:text-gray-300">Evet</span>
+                <span className="text-xs text-gray-700 dark:text-gray-300">Evet</span>
               </label>
               <label className="flex items-center space-x-2 cursor-pointer">
                 <input
@@ -214,7 +214,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
                   onChange={() => handleInputChange('fastingBS', false)}
                   className="w-4 h-4 text-blue-600"
                 />
-                <span className="text-sm text-gray-700 dark:text-gray-300">Hayır</span>
+                <span className="text-xs text-gray-700 dark:text-gray-300">Hayır</span>
               </label>
             </div>
           </FormField>
@@ -228,7 +228,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
             <select
               value={formData.restingECG}
               onChange={(e) => handleInputChange('restingECG', e.target.value)}
-              className={`w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
+              className={`w-full px-3 py-2 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
                 errors.restingECG ? 'border-red-300' : 'border-gray-200 dark:border-gray-600'
               } focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200`}
             >
@@ -249,7 +249,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
               type="number"
               value={formData.maxHeartRate || ''}
               onChange={(e) => handleInputChange('maxHeartRate', parseInt(e.target.value) || 0)}
-              className={`w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
+              className={`w-full px-3 py-2 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
                 errors.maxHeartRate ? 'border-red-300' : 'border-gray-200 dark:border-gray-600'
               } focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200`}
               placeholder="örn. 150"
@@ -273,7 +273,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
                   onChange={() => handleInputChange('exerciseAngina', true)}
                   className="w-4 h-4 text-blue-600"
                 />
-                <span className="text-sm text-gray-700 dark:text-gray-300">Evet</span>
+                <span className="text-xs text-gray-700 dark:text-gray-300">Evet</span>
               </label>
               <label className="flex items-center space-x-2 cursor-pointer">
                 <input
@@ -283,7 +283,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
                   onChange={() => handleInputChange('exerciseAngina', false)}
                   className="w-4 h-4 text-blue-600"
                 />
-                <span className="text-sm text-gray-700 dark:text-gray-300">Hayır</span>
+                <span className="text-xs text-gray-700 dark:text-gray-300">Hayır</span>
               </label>
             </div>
           </FormField>
@@ -299,7 +299,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
               step="0.1"
               value={formData.stDepression || ''}
               onChange={(e) => handleInputChange('stDepression', parseFloat(e.target.value) || 0)}
-              className={`w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
+              className={`w-full px-3 py-2 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
                 errors.stDepression ? 'border-red-300' : 'border-gray-200 dark:border-gray-600'
               } focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200`}
               placeholder="örn. 1.0"
@@ -317,7 +317,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
             <select
               value={formData.slope}
               onChange={(e) => handleInputChange('slope', e.target.value)}
-              className={`w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
+              className={`w-full px-3 py-2 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
                 errors.slope ? 'border-red-300' : 'border-gray-200 dark:border-gray-600'
               } focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200`}
             >
@@ -337,7 +337,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
             <select
               value={formData.majorVessels}
               onChange={(e) => handleInputChange('majorVessels', parseInt(e.target.value))}
-              className={`w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
+              className={`w-full px-3 py-2 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
                 errors.majorVessels ? 'border-red-300' : 'border-gray-200 dark:border-gray-600'
               } focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200`}
             >
@@ -358,7 +358,7 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
             <select
               value={formData.thalassemia}
               onChange={(e) => handleInputChange('thalassemia', e.target.value)}
-              className={`w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
+              className={`w-full px-3 py-2 rounded-xl border-2 bg-white/50 dark:bg-gray-800/50 input-focus ${
                 errors.thalassemia ? 'border-red-300' : 'border-gray-200 dark:border-gray-600'
               } focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200`}
             >
@@ -370,11 +370,11 @@ const HealthForm: React.FC<HealthFormProps> = ({ formData, onChange, onSubmit, i
           </FormField>
         </div>
 
-        <div className="pt-6">
+        <div className="pt-4">
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 pulse-on-hover disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 pulse-on-hover disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
           >
             {isLoading ? (
               <>
